@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.crazyqq.com/"/>
-  <updated>2019-05-26T02:27:01.742Z</updated>
+  <updated>2020-03-22T12:18:53.843Z</updated>
   <id>http://www.crazyqq.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AVB PTP协议</title>
+    <link href="http://www.crazyqq.com/posts/17838/"/>
+    <id>http://www.crazyqq.com/posts/17838/</id>
+    <published>2020-03-22T07:02:29.000Z</published>
+    <updated>2020-03-22T12:18:53.843Z</updated>
+    
+    <content type="html"><![CDATA[<p>IEEE Std 1588协议又通常被简称为PTP协议，即Precision Time Protoc。</p><h2 id="PTP产生的背景"><a href="#PTP产生的背景" class="headerlink" title="PTP产生的背景"></a>PTP产生的背景</h2><ul><li>NTP协议解决了以太网定时同步能力的不足，但只能达到毫秒级精度</li><li>测量仪器和工业控制需要更高的时间精度（现在MU、PMU等装置都要求微秒级的对时精度）</li></ul><h2 id="PTP中的基本概念"><a href="#PTP中的基本概念" class="headerlink" title="PTP中的基本概念"></a>PTP中的基本概念</h2><ul><li>时元(Timescale)：以TIA为基准，而非UTC</li><li>域(Domain)：应用了 PTP协议的网络</li><li>端口(Port)：设备上运行了PTP协议的端口</li><li>时钟节点(Node)：PTP域中的节点称为时钟节点</li><li>根时钟(Grandmaster)：为整个时钟域提供时间基准的主时钟</li></ul><h2 id="PTP对时实现的技术背景"><a href="#PTP对时实现的技术背景" class="headerlink" title="PTP对时实现的技术背景"></a>PTP对时实现的技术背景</h2><ul><li>硬件给报文打时间戳。</li><li>报文传递延时的准确计算</li><li>乒乓对时原理</li></ul><h2 id="单播与多播"><a href="#单播与多播" class="headerlink" title="单播与多播"></a>单播与多播</h2><ul><li>多播<blockquote><ul><li>使用01-1B-19-00-00-00 或01-80-C2-00-00-0E 作为目的MAC地址</li><li>使用224.0.1.129，224.0.0.107为目的IP（UDP时）</li><li>使用319,320 为目的通信端口（UDP时）</li></ul></blockquote></li><li>单播<blockquote><ul><li>包括：协商、报文订阅、点对点对时通信、续订报文、节点退出、退订报文、注销等过程</li></ul></blockquote></li></ul><p>目前大多主钟还只支持多播模式</p><h2 id="PTP同步机制"><a href="#PTP同步机制" class="headerlink" title="PTP同步机制"></a>PTP同步机制</h2><ul><li>一步法：使用一条报文提供同步时间信息</li><li>两步法：事件报文触发的时间信息，由跟随其后的另一条Followup报文提供 </li><li>一步法要硬件支持，两步法偏向软件支持</li><li>目前大部分交换机只支持two step模式，转发时把一步法的报文拆分成两步法的报文</li></ul><h2 id="PTP中的BMC功能"><a href="#PTP中的BMC功能" class="headerlink" title="PTP中的BMC功能"></a>PTP中的BMC功能</h2><p>BMC：Best Master Clock，即最优主钟算法  </p><ul><li>BMC算法主要用于解决网络中多台主钟设备共享的问题</li><li>BMC算法的实现是通过主钟广播Announce报文实现的</li></ul><p>车载以太网用到的ptp相关开源代码:</p><ul><li><a href="https://github.com/Avnu/gptp" target="_blank" rel="noopener">AVNU的gptp</a></li><li><a href="https://github.com/xcore/sc_avb" target="_blank" rel="noopener">XCor AVB代码中的gptp</a></li><li><a href="https://github.com/jdkoftinoff/gptp" target="_blank" rel="noopener">jdkoftinoff大神开源的 a GPL’d open source driver for linux</a></li></ul><p>文章为博主原创，转载请注明出处 <a href="http://www.crazyqq.com/posts/17838/">http://www.crazyqq.com/posts/17838/</a> </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;IEEE Std 1588协议又通常被简称为PTP协议，即Precision Time Protoc。&lt;/p&gt;
+&lt;h2 id=&quot;PTP产生的背景&quot;&gt;&lt;a href=&quot;#PTP产生的背景&quot; class=&quot;headerlink&quot; title=&quot;PTP产生的背景&quot;&gt;&lt;/a&gt;PTP
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>samba在windows下换身份登陆</title>

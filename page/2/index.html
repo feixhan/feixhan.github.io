@@ -140,6 +140,106 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Fuchsia" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/posts/43754/">初识Fuchsia</a>
+    </h1>
+  
+
+        
+        <a href="/posts/43754/" class="archive-article-date">
+  	<time datetime="2018-05-13T07:14:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-取代码"><a href="#1-取代码" class="headerlink" title="1.取代码"></a>1.取代码</h3><h4 id="1-1-代码"><a href="#1-1-代码" class="headerlink" title="1.1.代码"></a>1.1.代码</h4><p>代码位置<br>官方<a href="https://fuchsia.googlesource.com/" target="_blank" rel="noopener">https://fuchsia.googlesource.com/</a></p>
+<pre><code>curl -s &quot;https://fuchsia.googlesource.com/scripts/+/master/bootstrap?format=TEXT&quot; | base64 --decode | bash -s &lt;layer&gt;
+</code></pre><p>不能科学上网的，可以使用github的镜像。</p>
+<pre><code>https://github.com/fuchsia-mirror
+</code></pre><h4 id="1-2-说明"><a href="#1-2-说明" class="headerlink" title="1.2.说明"></a>1.2.说明</h4><p>layer有如下几个可选项，使用Topaz会包含所有的layer：</p>
+<ul>
+<li>Zircon Garnet Peridot Topaz</li>
+<li>Zircon 微内核</li>
+<li>Garnet 软件管理等系统级服务</li>
+<li>Peridot Peridot提供所需的服务，以创建由模块、情节、代理、实体和其他组件组成的汇聚可定制的多设备用户体验。</li>
+<li>Topaz 通过实现底层定义的接口来增强系统功能。Topaz包含四个主要类别的软件：module，agent，shell和runner。</li>
+</ul>
+<h3 id="2-Fuchsia一些技术"><a href="#2-Fuchsia一些技术" class="headerlink" title="2.Fuchsia一些技术"></a>2.Fuchsia一些技术</h3><ul>
+<li>jiri编译及管理git仓库</li>
+<li>微内核Zircon</li>
+<li>新的进程间通信接口描述方式FIDL</li>
+<li>进程沙箱</li>
+<li>NameSpaces(文件管理与服务发现)</li>
+<li>Story (root application的逻辑容器)</li>
+</ul>
+<h3 id="3-开源的UI开发环境Flutter"><a href="#3-开源的UI开发环境Flutter" class="headerlink" title="3.开源的UI开发环境Flutter"></a>3.开源的UI开发环境Flutter</h3><h4 id="3-1官网"><a href="#3-1官网" class="headerlink" title="3.1官网"></a>3.1官网</h4><pre><code>https://flutter.io/
+</code></pre><h4 id="3-2-黑科技"><a href="#3-2-黑科技" class="headerlink" title="3.2 黑科技"></a>3.2 黑科技</h4><ul>
+<li>支持导出 Android iOS 和 Fuchsia 三个平台的安装包</li>
+<li>Hot Reload (修改UI后，无需重新启动程序)</li>
+</ul>
+<h4 id="3-3-Flutter架构"><a href="#3-3-Flutter架构" class="headerlink" title="3.3 Flutter架构"></a>3.3 Flutter架构</h4><p><img src="/posts/43754/flutter.png" alt="架构图"></p>
+<p>文章为博主原创，转载请注明出处 <a href="http://www.crazyqq.com/posts/43754/">http://www.crazyqq.com/posts/43754/</a> </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">fuchsia</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/posts/43754/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ddns" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     

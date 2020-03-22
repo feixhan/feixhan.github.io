@@ -140,6 +140,120 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-AVB-PTP协议" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/posts/17838/">AVB PTP协议</a>
+    </h1>
+  
+
+        
+        <a href="/posts/17838/" class="archive-article-date">
+  	<time datetime="2020-03-22T07:02:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>IEEE Std 1588协议又通常被简称为PTP协议，即Precision Time Protoc。</p>
+<h2 id="PTP产生的背景"><a href="#PTP产生的背景" class="headerlink" title="PTP产生的背景"></a>PTP产生的背景</h2><ul>
+<li>NTP协议解决了以太网定时同步能力的不足，但只能达到毫秒级精度</li>
+<li>测量仪器和工业控制需要更高的时间精度（现在MU、PMU等装置都要求微秒级的对时精度）</li>
+</ul>
+<h2 id="PTP中的基本概念"><a href="#PTP中的基本概念" class="headerlink" title="PTP中的基本概念"></a>PTP中的基本概念</h2><ul>
+<li>时元(Timescale)：以TIA为基准，而非UTC</li>
+<li>域(Domain)：应用了 PTP协议的网络</li>
+<li>端口(Port)：设备上运行了PTP协议的端口</li>
+<li>时钟节点(Node)：PTP域中的节点称为时钟节点</li>
+<li>根时钟(Grandmaster)：为整个时钟域提供时间基准的主时钟</li>
+</ul>
+<h2 id="PTP对时实现的技术背景"><a href="#PTP对时实现的技术背景" class="headerlink" title="PTP对时实现的技术背景"></a>PTP对时实现的技术背景</h2><ul>
+<li>硬件给报文打时间戳。</li>
+<li>报文传递延时的准确计算</li>
+<li>乒乓对时原理</li>
+</ul>
+<h2 id="单播与多播"><a href="#单播与多播" class="headerlink" title="单播与多播"></a>单播与多播</h2><ul>
+<li>多播<blockquote>
+<ul>
+<li>使用01-1B-19-00-00-00 或01-80-C2-00-00-0E 作为目的MAC地址</li>
+<li>使用224.0.1.129，224.0.0.107为目的IP（UDP时）</li>
+<li>使用319,320 为目的通信端口（UDP时）</li>
+</ul>
+</blockquote>
+</li>
+<li>单播<blockquote>
+<ul>
+<li>包括：协商、报文订阅、点对点对时通信、续订报文、节点退出、退订报文、注销等过程</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>目前大多主钟还只支持多播模式</p>
+<h2 id="PTP同步机制"><a href="#PTP同步机制" class="headerlink" title="PTP同步机制"></a>PTP同步机制</h2><ul>
+<li>一步法：使用一条报文提供同步时间信息</li>
+<li>两步法：事件报文触发的时间信息，由跟随其后的另一条Followup报文提供 </li>
+<li>一步法要硬件支持，两步法偏向软件支持</li>
+<li>目前大部分交换机只支持two step模式，转发时把一步法的报文拆分成两步法的报文</li>
+</ul>
+<h2 id="PTP中的BMC功能"><a href="#PTP中的BMC功能" class="headerlink" title="PTP中的BMC功能"></a>PTP中的BMC功能</h2><p>BMC：Best Master Clock，即最优主钟算法  </p>
+<ul>
+<li>BMC算法主要用于解决网络中多台主钟设备共享的问题</li>
+<li>BMC算法的实现是通过主钟广播Announce报文实现的</li>
+</ul>
+<p>车载以太网用到的ptp相关开源代码:</p>
+<ul>
+<li><a href="https://github.com/Avnu/gptp" target="_blank" rel="noopener">AVNU的gptp</a></li>
+<li><a href="https://github.com/xcore/sc_avb" target="_blank" rel="noopener">XCor AVB代码中的gptp</a></li>
+<li><a href="https://github.com/jdkoftinoff/gptp" target="_blank" rel="noopener">jdkoftinoff大神开源的 a GPL’d open source driver for linux</a></li>
+</ul>
+<p>文章为博主原创，转载请注明出处 <a href="http://www.crazyqq.com/posts/17838/">http://www.crazyqq.com/posts/17838/</a> </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/posts/17838/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-samba在windows下换身份登陆" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -898,106 +1012,6 @@ plt.show()
       
         <p class="article-more-link">
           <a class="article-more-a" href="/posts/34984/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Fuchsia" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/posts/43754/">初识Fuchsia</a>
-    </h1>
-  
-
-        
-        <a href="/posts/43754/" class="archive-article-date">
-  	<time datetime="2018-05-13T07:14:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-取代码"><a href="#1-取代码" class="headerlink" title="1.取代码"></a>1.取代码</h3><h4 id="1-1-代码"><a href="#1-1-代码" class="headerlink" title="1.1.代码"></a>1.1.代码</h4><p>代码位置<br>官方<a href="https://fuchsia.googlesource.com/" target="_blank" rel="noopener">https://fuchsia.googlesource.com/</a></p>
-<pre><code>curl -s &quot;https://fuchsia.googlesource.com/scripts/+/master/bootstrap?format=TEXT&quot; | base64 --decode | bash -s &lt;layer&gt;
-</code></pre><p>不能科学上网的，可以使用github的镜像。</p>
-<pre><code>https://github.com/fuchsia-mirror
-</code></pre><h4 id="1-2-说明"><a href="#1-2-说明" class="headerlink" title="1.2.说明"></a>1.2.说明</h4><p>layer有如下几个可选项，使用Topaz会包含所有的layer：</p>
-<ul>
-<li>Zircon Garnet Peridot Topaz</li>
-<li>Zircon 微内核</li>
-<li>Garnet 软件管理等系统级服务</li>
-<li>Peridot Peridot提供所需的服务，以创建由模块、情节、代理、实体和其他组件组成的汇聚可定制的多设备用户体验。</li>
-<li>Topaz 通过实现底层定义的接口来增强系统功能。Topaz包含四个主要类别的软件：module，agent，shell和runner。</li>
-</ul>
-<h3 id="2-Fuchsia一些技术"><a href="#2-Fuchsia一些技术" class="headerlink" title="2.Fuchsia一些技术"></a>2.Fuchsia一些技术</h3><ul>
-<li>jiri编译及管理git仓库</li>
-<li>微内核Zircon</li>
-<li>新的进程间通信接口描述方式FIDL</li>
-<li>进程沙箱</li>
-<li>NameSpaces(文件管理与服务发现)</li>
-<li>Story (root application的逻辑容器)</li>
-</ul>
-<h3 id="3-开源的UI开发环境Flutter"><a href="#3-开源的UI开发环境Flutter" class="headerlink" title="3.开源的UI开发环境Flutter"></a>3.开源的UI开发环境Flutter</h3><h4 id="3-1官网"><a href="#3-1官网" class="headerlink" title="3.1官网"></a>3.1官网</h4><pre><code>https://flutter.io/
-</code></pre><h4 id="3-2-黑科技"><a href="#3-2-黑科技" class="headerlink" title="3.2 黑科技"></a>3.2 黑科技</h4><ul>
-<li>支持导出 Android iOS 和 Fuchsia 三个平台的安装包</li>
-<li>Hot Reload (修改UI后，无需重新启动程序)</li>
-</ul>
-<h4 id="3-3-Flutter架构"><a href="#3-3-Flutter架构" class="headerlink" title="3.3 Flutter架构"></a>3.3 Flutter架构</h4><p><img src="/posts/43754/flutter.png" alt="架构图"></p>
-<p>文章为博主原创，转载请注明出处 <a href="http://www.crazyqq.com/posts/43754/">http://www.crazyqq.com/posts/43754/</a> </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">fuchsia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/posts/43754/">展开全文 >></a>
         </p>
       
 
