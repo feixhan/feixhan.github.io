@@ -139,27 +139,6 @@
   </entry>
   
   <entry>
-    <title>简易Android OTA升级服务器端搭建</title>
-    <link href="http://www.crazyqq.com/posts/19452/"/>
-    <id>http://www.crazyqq.com/posts/19452/</id>
-    <published>2019-03-30T12:28:16.000Z</published>
-    <updated>2019-03-30T12:33:56.877Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="最近在写一个OTA服务器端程序，开源到了github，希望有兴趣的小伙伴一起完善。"><a href="#最近在写一个OTA服务器端程序，开源到了github，希望有兴趣的小伙伴一起完善。" class="headerlink" title="最近在写一个OTA服务器端程序，开源到了github，希望有兴趣的小伙伴一起完善。"></a>最近在写一个OTA服务器端程序，开源到了github，希望有兴趣的小伙伴一起完善。</h4><h2 id="GitHub地址"><a href="#GitHub地址" class="headerlink" title="GitHub地址"></a>GitHub地址</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/feixhan/OTAServer</span><br></pre></td></tr></table></figure><h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><ul><li>NodeJs + express</li><li>Mysql</li></ul><h2 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use"></a>How to use</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">node bin/www</span><br></pre></td></tr></table></figure><p>文章为博主原创，转载请注明出处 <a href="http://www.crazyqq.com/posts/19452/">http://www.crazyqq.com/posts/19452/</a> </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;最近在写一个OTA服务器端程序，开源到了github，希望有兴趣的小伙伴一起完善。&quot;&gt;&lt;a href=&quot;#最近在写一个OTA服务器端程序，开源到了github，希望有兴趣的小伙伴一起完善。&quot; class=&quot;headerlink&quot; title=&quot;最近在写一个OTA服
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Android OTA 全量包生成</title>
     <link href="http://www.crazyqq.com/posts/24580/"/>
     <id>http://www.crazyqq.com/posts/24580/</id>
