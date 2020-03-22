@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.crazyqq.com">
-  <title>Tag: fuchsia | FelixBlog</title>
+  <title>I2C从设备地址 | FelixBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="FelixBlog">
-<meta property="og:url" content="http://www.crazyqq.com/tags/fuchsia/index.html">
+  <meta name="description" content="结论： I2C设备的写地址 = I2C设备地址 &amp;lt;&amp;lt; 1I2C设备的读地址 = (I2C设备地址 &amp;lt;&amp;lt; 1) + 1 我们在调I2C设备驱动的时候，datasheet里会给出8bit I2C地址，但是这个地址一般是带读写位的（最低位）。我们在编写驱动时往往是使用实际的设备地址（不带读写位），所以我们在编程时需要对地址进行右移一位，即去掉最后一位读写位。 1234567891">
+<meta property="og:type" content="article">
+<meta property="og:title" content="I2C从设备地址">
+<meta property="og:url" content="http://www.crazyqq.com/posts/35605/index.html">
 <meta property="og:site_name" content="FelixBlog">
+<meta property="og:description" content="结论： I2C设备的写地址 = I2C设备地址 &amp;lt;&amp;lt; 1I2C设备的读地址 = (I2C设备地址 &amp;lt;&amp;lt; 1) + 1 我们在调I2C设备驱动的时候，datasheet里会给出8bit I2C地址，但是这个地址一般是带读写位的（最低位）。我们在编写驱动时往往是使用实际的设备地址（不带读写位），所以我们在编程时需要对地址进行右移一位，即去掉最后一位读写位。 1234567891">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-26T02:22:30.989Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FelixBlog">
+<meta name="twitter:title" content="I2C从设备地址">
+<meta name="twitter:description" content="结论： I2C设备的写地址 = I2C设备地址 &amp;lt;&amp;lt; 1I2C设备的读地址 = (I2C设备地址 &amp;lt;&amp;lt; 1) + 1 我们在调I2C设备驱动的时候，datasheet里会给出8bit I2C地址，但是这个地址一般是带读写位的（最低位）。我们在编写驱动时往往是使用实际的设备地址（不带读写位），所以我们在编程时需要对地址进行右移一位，即去掉最后一位读写位。 1234567891">
   
     <link rel="alternative" href="/atom.xml" title="FelixBlog" type="application/atom+xml">
   
@@ -138,60 +142,114 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-I2C从设备地址" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/posts/43754/" class="archive-article-date">
-  	<time datetime="2018-05-13T07:14:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/posts/43754/">初识Fuchsia</a>
+    <h1 class="article-title" itemprop="name">
+      I2C从设备地址
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">fuchsia</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        <a href="/posts/35605/" class="archive-article-date">
+  	<time datetime="2019-05-26T02:20:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>结论：</p>
+<p>I2C设备的写地址 = I2C设备地址 &lt;&lt; 1<br>I2C设备的读地址 = (I2C设备地址 &lt;&lt; 1) + 1</p>
+<p>我们在调I2C设备驱动的时候，datasheet里会给出8bit I2C地址，但是这个地址一般是带读写位的（最低位）。我们在编写驱动时往往是使用实际的设备地址（不带读写位），所以我们在编程时需要对地址进行右移一位，即去掉最后一位读写位。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#define I2C_RETRIES                   0x0701          /*设置收不到ACK时的重试次数             */</span><br><span class="line"></span><br><span class="line">#define I2C_TIMEOUT                0x0702             /* 设置超时时限的jiffies                               */</span><br><span class="line"></span><br><span class="line">#define I2C_SLAVE                      0x0703         /*设置从机地址                                            */</span><br><span class="line"></span><br><span class="line">#define I2C_SLAVE_FORCE        0x0706                 /* 强制设置从机地址                                              */</span><br><span class="line"></span><br><span class="line">#define I2C_TENBIT                     0x0704         /*选择地址位长:=0 for 7bit , != 0 for 10 bit */</span><br><span class="line"></span><br><span class="line">#define I2C_FUNCS                     0x0705          /*获取适配器支持的功能                            */</span><br><span class="line"></span><br><span class="line">#define I2C_RDWR                       0x0707          /*Combined R/W transfer (one STOP only) */</span><br><span class="line"></span><br><span class="line">#define I2C_PEC                           0x0708       /* != 0 to use PEC with SMBus                       */</span><br><span class="line"></span><br><span class="line">#define I2C_SMBUS                     0x0720           /*SMBus transfer                                           */</span><br></pre></td></tr></table></figure>
+<p>文章为博主原创，转载请注明出处 <a href="http://www.crazyqq.com/posts/35605/">http://www.crazyqq.com/posts/35605/</a> </p>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/posts/2073/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Linux下recovery img解压与打包
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/posts/52227/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">群晖ds216j 安装gcc</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'posts35605',
+  owner: 'feixhan',
+  repo: 'feixhan.github.io',
+  oauth: {
+    client_id: '889910e784e3d89aa245',
+    client_secret: 'f1c2f541f68ed45f60e4fd595ac3b513a79c7409',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+
+  
 
 
           </div>
@@ -214,9 +272,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

@@ -4,6 +4,66 @@
 
     
   <url>
+    <loc>http://www.crazyqq.com/posts/48775/</loc>
+    <lastmod>2019-05-26T02:27:01.742Z</lastmod>
+    <data>
+        <display>
+        <title>samba在windows下换身份登陆</title>
+        <pubTime>2019-05-26T02:26:16.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crazyqq.com/posts/53554/</loc>
+    <lastmod>2019-05-26T02:25:09.096Z</lastmod>
+    <data>
+        <display>
+        <title>ssh 反向代理</title>
+        <pubTime>2019-05-26T02:23:48.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crazyqq.com/posts/2073/</loc>
+    <lastmod>2019-05-26T02:23:27.714Z</lastmod>
+    <data>
+        <display>
+        <title>Linux下recovery img解压与打包</title>
+        <pubTime>2019-05-26T02:23:14.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crazyqq.com/posts/35605/</loc>
+    <lastmod>2019-05-26T02:22:30.989Z</lastmod>
+    <data>
+        <display>
+        <title>I2C从设备地址</title>
+        <pubTime>2019-05-26T02:20:05.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.crazyqq.com/posts/52227/</loc>
     <lastmod>2019-05-26T02:07:53.909Z</lastmod>
     <data>
@@ -34,21 +94,6 @@
 
     
   <url>
-    <loc>http://www.crazyqq.com/posts/1/</loc>
-    <lastmod>2019-02-10T03:53:59.554Z</lastmod>
-    <data>
-        <display>
-        <title>FIDL: 概述</title>
-        <pubTime>2018-05-06T13:10:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.crazyqq.com/posts/16107/</loc>
     <lastmod>2019-02-10T03:53:59.554Z</lastmod>
     <data>
@@ -58,6 +103,21 @@
         
         <tag>essay</tag>
          
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.crazyqq.com/posts/1/</loc>
+    <lastmod>2019-02-10T03:53:59.554Z</lastmod>
+    <data>
+        <display>
+        <title>FIDL: 概述</title>
+        <pubTime>2018-05-06T13:10:00.000Z</pubTime>
+        
          
            
         </display>

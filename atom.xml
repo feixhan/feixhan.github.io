@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.crazyqq.com/"/>
-  <updated>2019-05-26T02:07:53.909Z</updated>
+  <updated>2019-05-26T02:27:01.742Z</updated>
   <id>http://www.crazyqq.com/</id>
   
   <author>
@@ -15,6 +15,103 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>samba在windows下换身份登陆</title>
+    <link href="http://www.crazyqq.com/posts/48775/"/>
+    <id>http://www.crazyqq.com/posts/48775/</id>
+    <published>2019-05-26T02:26:16.000Z</published>
+    <updated>2019-05-26T02:27:01.742Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>断开连接 </li></ul><p>net use * /del /y</p><ul><li>忘掉记忆的密码</li></ul><p>开始 -&gt; 运行 -&gt; control userpasswords2，高级-&gt;管理密码-&gt;windows凭据，然后把你记住密码的所在服务器名称删除</p><p>文章为博主原创，转载请注明出处 <a href="http://www.crazyqq.com/posts/48775/">http://www.crazyqq.com/posts/48775/</a> </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;断开连接 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;net use * /del /y&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;忘掉记忆的密码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;开始 -&amp;gt; 运行 -&amp;gt; control userpasswords2，高级-&amp;gt;管理密码-&amp;gt;w
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ssh 反向代理</title>
+    <link href="http://www.crazyqq.com/posts/53554/"/>
+    <id>http://www.crazyqq.com/posts/53554/</id>
+    <published>2019-05-26T02:23:48.000Z</published>
+    <updated>2019-05-26T02:25:09.096Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><p>在内网机器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -fCNR [B机器IP或省略]:[B机器端口]:[A机器的IP]:[A机器端口] [登陆B机器的用户名@服务器IP]</span><br><span class="line">ssh -fCNR 7280:localhost:22 root@baidu.hanfei.pub</span><br></pre></td></tr></table></figure></li><li><p>在外网机器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -fCNL [A机器IP或省略]:[A机器端口]:[B机器的IP]:[B机器端口] [登陆B机器的用户名@B机器的IP]</span><br><span class="line">ssh -fCNL *:1234:localhost:7280 localhost</span><br></pre></td></tr></table></figure></li></ul><p>3.在其它机器上 ssh -p 12344 baidu.hanfei.pub就可以访问了</p><p>文章为博主原创，转载请注明出处 <a href="http://www.crazyqq.com/posts/53554/">http://www.crazyqq.com/posts/53554/</a> </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;在内网机器&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux下recovery img解压与打包</title>
+    <link href="http://www.crazyqq.com/posts/2073/"/>
+    <id>http://www.crazyqq.com/posts/2073/</id>
+    <published>2019-05-26T02:23:14.000Z</published>
+    <updated>2019-05-26T02:23:27.714Z</updated>
+    
+    <content type="html"><![CDATA[<p>一、解压</p><p>1.安装abootimg工具：adb apt-get install abootimg</p><p>2.解压recovery.img包：abootimg -x recovery.img  得到bootimg.cfg、zImage、initrd.img三个文件</p><p>3.解压initrd.img得到ramdisk目录：abootimg-unpack-initrd initrd.img</p><p>二、打包</p><p>1.由ramdisk目录生成新的initrd_new.img：abootimg-pack-initrd initrd_new.img ramdisk/</p><p>2.生成新的recovery_new.img：abootimg –create recovery_new.img -f bootimg.cfg -k zImage -r initrd.img</p><p>（此处要注意initrd_new.img的大小，如果比之前大则需要修改bootimg.cfg中bootsize大小）</p><p>文章为博主原创，转载请注明出处 <a href="http://www.crazyqq.com/posts/2073/">http://www.crazyqq.com/posts/2073/</a> </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一、解压&lt;/p&gt;
+&lt;p&gt;1.安装abootimg工具：adb apt-get install abootimg&lt;/p&gt;
+&lt;p&gt;2.解压recovery.img包：abootimg -x recovery.img  得到bootimg.cfg、zImage、initrd.im
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>I2C从设备地址</title>
+    <link href="http://www.crazyqq.com/posts/35605/"/>
+    <id>http://www.crazyqq.com/posts/35605/</id>
+    <published>2019-05-26T02:20:05.000Z</published>
+    <updated>2019-05-26T02:22:30.989Z</updated>
+    
+    <content type="html"><![CDATA[<p>结论：</p><p>I2C设备的写地址 = I2C设备地址 &lt;&lt; 1<br>I2C设备的读地址 = (I2C设备地址 &lt;&lt; 1) + 1</p><p>我们在调I2C设备驱动的时候，datasheet里会给出8bit I2C地址，但是这个地址一般是带读写位的（最低位）。我们在编写驱动时往往是使用实际的设备地址（不带读写位），所以我们在编程时需要对地址进行右移一位，即去掉最后一位读写位。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#define I2C_RETRIES                   0x0701          /*设置收不到ACK时的重试次数             */</span><br><span class="line"></span><br><span class="line">#define I2C_TIMEOUT                0x0702             /* 设置超时时限的jiffies                               */</span><br><span class="line"></span><br><span class="line">#define I2C_SLAVE                      0x0703         /*设置从机地址                                            */</span><br><span class="line"></span><br><span class="line">#define I2C_SLAVE_FORCE        0x0706                 /* 强制设置从机地址                                              */</span><br><span class="line"></span><br><span class="line">#define I2C_TENBIT                     0x0704         /*选择地址位长:=0 for 7bit , != 0 for 10 bit */</span><br><span class="line"></span><br><span class="line">#define I2C_FUNCS                     0x0705          /*获取适配器支持的功能                            */</span><br><span class="line"></span><br><span class="line">#define I2C_RDWR                       0x0707          /*Combined R/W transfer (one STOP only) */</span><br><span class="line"></span><br><span class="line">#define I2C_PEC                           0x0708       /* != 0 to use PEC with SMBus                       */</span><br><span class="line"></span><br><span class="line">#define I2C_SMBUS                     0x0720           /*SMBus transfer                                           */</span><br></pre></td></tr></table></figure><p>文章为博主原创，转载请注明出处 <a href="http://www.crazyqq.com/posts/35605/">http://www.crazyqq.com/posts/35605/</a> </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;结论：&lt;/p&gt;
+&lt;p&gt;I2C设备的写地址 = I2C设备地址 &amp;lt;&amp;lt; 1&lt;br&gt;I2C设备的读地址 = (I2C设备地址 &amp;lt;&amp;lt; 1) + 1&lt;/p&gt;
+&lt;p&gt;我们在调I2C设备驱动的时候，datasheet里会给出8bit I2C地址，但是这个地址一般是
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>群晖ds216j 安装gcc</title>

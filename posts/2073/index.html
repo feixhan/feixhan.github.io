@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.crazyqq.com">
-  <title>Tag: fuchsia | FelixBlog</title>
+  <title>Linux下recovery img解压与打包 | FelixBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="FelixBlog">
-<meta property="og:url" content="http://www.crazyqq.com/tags/fuchsia/index.html">
+  <meta name="description" content="一、解压 1.安装abootimg工具：adb apt-get install abootimg 2.解压recovery.img包：abootimg -x recovery.img  得到bootimg.cfg、zImage、initrd.img三个文件 3.解压initrd.img得到ramdisk目录：abootimg-unpack-initrd initrd.img 二、打包 1.由ram">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux下recovery img解压与打包">
+<meta property="og:url" content="http://www.crazyqq.com/posts/2073/index.html">
 <meta property="og:site_name" content="FelixBlog">
+<meta property="og:description" content="一、解压 1.安装abootimg工具：adb apt-get install abootimg 2.解压recovery.img包：abootimg -x recovery.img  得到bootimg.cfg、zImage、initrd.img三个文件 3.解压initrd.img得到ramdisk目录：abootimg-unpack-initrd initrd.img 二、打包 1.由ram">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-26T02:23:27.714Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FelixBlog">
+<meta name="twitter:title" content="Linux下recovery img解压与打包">
+<meta name="twitter:description" content="一、解压 1.安装abootimg工具：adb apt-get install abootimg 2.解压recovery.img包：abootimg -x recovery.img  得到bootimg.cfg、zImage、initrd.img三个文件 3.解压initrd.img得到ramdisk目录：abootimg-unpack-initrd initrd.img 二、打包 1.由ram">
   
     <link rel="alternative" href="/atom.xml" title="FelixBlog" type="application/atom+xml">
   
@@ -138,60 +142,118 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-recovery-img解压打包" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/posts/43754/" class="archive-article-date">
-  	<time datetime="2018-05-13T07:14:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/posts/43754/">初识Fuchsia</a>
+    <h1 class="article-title" itemprop="name">
+      Linux下recovery img解压与打包
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">fuchsia</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        <a href="/posts/2073/" class="archive-article-date">
+  	<time datetime="2019-05-26T02:23:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、解压</p>
+<p>1.安装abootimg工具：adb apt-get install abootimg</p>
+<p>2.解压recovery.img包：abootimg -x recovery.img  得到bootimg.cfg、zImage、initrd.img三个文件</p>
+<p>3.解压initrd.img得到ramdisk目录：abootimg-unpack-initrd initrd.img</p>
+<p>二、打包</p>
+<p>1.由ramdisk目录生成新的initrd_new.img：abootimg-pack-initrd initrd_new.img ramdisk/</p>
+<p>2.生成新的recovery_new.img：abootimg –create recovery_new.img -f bootimg.cfg -k zImage -r initrd.img</p>
+<p>（此处要注意initrd_new.img的大小，如果比之前大则需要修改bootimg.cfg中bootsize大小）</p>
+<p>文章为博主原创，转载请注明出处 <a href="http://www.crazyqq.com/posts/2073/">http://www.crazyqq.com/posts/2073/</a> </p>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/posts/53554/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ssh 反向代理
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/posts/35605/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">I2C从设备地址</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'posts2073',
+  owner: 'feixhan',
+  repo: 'feixhan.github.io',
+  oauth: {
+    client_id: '889910e784e3d89aa245',
+    client_secret: 'f1c2f541f68ed45f60e4fd595ac3b513a79c7409',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+
+  
 
 
           </div>
@@ -214,9 +276,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
